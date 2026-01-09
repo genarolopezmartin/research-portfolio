@@ -1,0 +1,526 @@
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+
+:root {
+    --primary: #1a365d;
+    --secondary: #3182ce;
+    --text: #2d3748;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+}
+
+body.dark-mode {
+    --primary: #90cdf4;
+    --secondary: #63b3ed;
+    --text: #e2e8f0;
+    --light-bg: #1a202c;
+    --white: #0f172a;
+}
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section {
+    background-color: transparent;
+}
+
+
+
+
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Navigate */
+
+nav {
+    /* Reemplazamos el color sólido por la imagen */
+    background-image: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), url('neurona-encabezado.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Añadimos una sombra sutil para separar la nav del contenido */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo { color: white; font-weight: 700; text-decoration: none; }
+
+nav ul { display: flex; list-style: none; }
+
+
+
+
+
+/* Estilo base para los enlaces del menú */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    position: relative; /* Necesario para posicionar la línea respecto al texto */
+    padding-bottom: 4px; /* Espacio para que la línea no toque las letras */
+    transition: color 0.3s ease;
+}
+
+/* Creamos la línea con un pseudo-elemento ::after */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;           /* Empezamos con ancho cero */
+    height: 2px;        /* Grosor de la línea */
+    bottom: 0;
+    left: 50%;          /* La centramos horizontalmente */
+    background-color: #90cdf4; /* El color azul claro de tu tema */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%); /* Ajuste para que crezca desde el centro perfecto */
+}
+
+/* Efecto al pasar el cursor (Hover) */
+nav ul li a:hover {
+    color: #90cdf4;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* La línea se expande */
+}
+
+
+
+/* Efecto al pasar el cursor */
+nav ul li a:hover {
+    color: #90cdf4; /* azul claro sobre el fondo oscuro */
+    transition: color 0.3s ease; /* cambio de color suave */
+}
+
+
+
+/* Header */
+header { 
+    padding: 110px 0 60px 0; 
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-info h1 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 25px; 
+    line-height: 1.1;
+}
+
+/* Profile picture */
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 5px solid #e2e8f0; 
+    margin-top: 25px; 
+}
+
+/* Social media */
+.social-links { margin-bottom: 20px; }
+
+.social-links a {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-right: 18px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover { color: var(--secondary); }
+
+.cv-link { font-size: 1rem; color: #4a5568; }
+
+.cv-link a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cv-link a:hover {text-decoration: underline;
+}
+
+
+/* Secctions */
+section { padding: 60px 0; border-top: 1px solid #edf2f7; }
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Interests */
+.interest-card {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.interest-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+
+
+
+.interest-card i { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; display: block;}
+
+.link-lab {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-decoration 0.3s ease;
+}
+
+.link-lab:hover {text-decoration: underline;
+}
+
+
+/* Keywords */
+.keywords-area {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #cbd5e0; /* Línea recta sólida */
+    font-size: 0.95rem;
+    text-align: left; /* Texto centrado */
+}
+
+/* Education */
+.timeline-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 3px solid var(--secondary);
+}
+
+.date { font-weight: 700; color: var(--secondary); font-size: 0.9rem; }
+
+.link-uib { color: #0065BD !important; text-decoration: none !important; }
+.link-uib:hover {text-decoration: underline !important; }
+
+
+.link-uam { color: #4a7729 !important; text-decoration: none !important; }
+.link-uam:hover {text-decoration: underline !important; }
+
+
+.thesis { margin-top: 8px; font-size: 0.95rem; color: #4a5568; line-height: 1.4; }
+
+/* Publications */
+.pub-list { padding-left: 20px; }
+
+.pub-list li { margin-bottom: 25px; padding-left: 10px; }
+
+.paper-btn { 
+    color: var(--secondary); 
+    text-decoration: none; 
+    font-size: 0.75rem; 
+    font-weight: 700;
+    border: 1.5px solid var(--secondary); 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    margin-left: 8px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.paper-btn:hover { background: var(--secondary); color: white; }
+
+/* Dissemination */
+.dissemination-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.diss-card { border: 1px solid #e2e8f0; padding: 14px; border-radius: 10px; transition: border 0.3s; }
+
+.diss-card:hover { border-color: var(--secondary); }
+
+.type-tag { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; display: inline-block; }
+
+.type-tag.oral { background: #ebf8ff; color: #2b6cb0; }
+.type-tag.poster { background: #fff5f7; color: #97266d; }
+
+footer { text-align: center; padding: 60px 0; color: #a0aec0; font-size: 0.85rem; }
+
+
+footer a {
+    color: inherit;         /* Mantiene el color gris del footer */
+    text-decoration: none;  /* Quita el subrayado por defecto */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline; /* El subrayado aparece al pasar el ratón */
+    color: var(--secondary);    /* Opcional: cambia al azul de tu tema al pasar el ratón */
+}
+
+
+
+
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Ocultar el botón de menú en escritorio */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Ajustes de Navegación */
+    .menu-toggle {
+        display: block; /* Aparece en móviles */
+        order: 2;
+    }
+
+    #theme-toggle {
+        order: 3;
+        margin-left: 10px;
+    }
+
+    .logo {
+        order: 1;
+        font-size: 1rem;
+    }
+
+    nav ul {
+        display: none; /* Escondido por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(26, 54, 93, 0.95); /* Fondo sólido para legibilidad */
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Se muestra al hacer clic */
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        margin-left: 0;
+        font-size: 1.1rem;
+    }
+
+    /* Ajustes de Header y Perfil */
+    .profile-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-info h1 {
+        font-size: 2.2rem; /* Texto más pequeño en móvil */
+    }
+
+    .profile-image img {
+        width: 160px;
+        height: 160px;
+        margin-top: 30px;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Contenedores y Secciones */
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    /* Timeline de educación */
+    .timeline-item {
+        padding-left: 15px;
+    }
+}
+
+
+
+.osf-icon {
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    left: -2px;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.osf-link:hover .osf-icon {
+    opacity: 1;
+    filter: brightness(0) saturate(100%)
+            invert(46%) sepia(83%) saturate(746%)
+            hue-rotate(178deg) brightness(95%) contrast(92%);
+}
+
+.github-link {
+    margin-left: -2px;
+}
+
+.bluesky-icon {
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    left: +5px;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.bluesky-link:hover .bluesky-icon {
+    opacity: 1;
+    filter: brightness(0) saturate(100%)
+            invert(46%) sepia(83%) saturate(746%)
+            hue-rotate(178deg) brightness(95%) contrast(92%);
+}
+
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    color: #90cdf4;
+    transform: scale(1.1);
+}
+
+
+
+body.dark-mode .interest-card,
+body.dark-mode .diss-card {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode footer {
+    color: #718096;
+}
+
+body.dark-mode nav {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+
+body.dark-mode #theme-toggle {
+    color: #f6e05e; /* amarillo suave para el sol */
+}
+
+body.dark-mode .profile-info h1 {
+    color: #ffffff;
+}
+
+
+body.dark-mode .diss-card i.fa-link {
+    color: #d6bcfa; /* lila claro */
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .diss-card a:hover i.fa-link {
+    color: #e9d8fd; /* aún más claro al hover */
+}
+
+body.dark-mode .cv-link {
+    color: #d6bcfa; /* mismo lila claro */
+}
+
+body.dark-mode .cv-link a {
+    color: #e9d8fd;
+}
+
+body.dark-mode .social-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .social-links a:hover {
+    color: var(--secondary);
+}
+
+/* Bluesky icon white in dark mode */
+body.dark-mode .bluesky-icon {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .bluesky-link:hover .bluesky-icon {
+    opacity: 0.75;
+}
