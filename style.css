@@ -104,11 +104,11 @@ nav ul li a {
 nav ul li a::after {
     content: '';
     position: absolute;
-    width: 0;           /* Empezamos con ancho cero */
-    height: 2px;        /* Grosor de la línea */
+    width: 0;           
+    height: 2px;        
     bottom: 0;
-    left: 50%;          /* La centramos horizontalmente */
-    background-color: #90cdf4; /* El color azul claro de tu tema */
+    left: 50%;          
+    background-color: #90cdf4; /* El color azul claro */
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%); /* Ajuste para que crezca desde el centro perfecto */
 }
@@ -295,14 +295,14 @@ footer { text-align: center; padding: 60px 0; color: #a0aec0; font-size: 0.85rem
 
 
 footer a {
-    color: inherit;         /* Mantiene el color gris del footer */
-    text-decoration: none;  /* Quita el subrayado por defecto */
+    color: inherit;         
+    text-decoration: none;  
     transition: color 0.3s ease;
 }
 
 footer a:hover {
     text-decoration: underline; /* El subrayado aparece al pasar el ratón */
-    color: var(--secondary);    /* Opcional: cambia al azul de tu tema al pasar el ratón */
+    color: var(--secondary);    
 }
 
 
